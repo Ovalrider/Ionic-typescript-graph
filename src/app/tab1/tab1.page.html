@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Завдання 1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав Шкорень Артем. Варіант 16</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання 1</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="background">Задано три числа. Знайти кількість тих з них, які кратні 44.</p>
+      <ion-item>
+        <ion-label position="floating">Перше число</ion-label>
+        <ion-input type="number" id="first" value='1' #Inputa></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Друге число</ion-label>
+        <ion-input type="number" id="second" value='2' #Inputb></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Третє число</ion-label>
+        <ion-input type="number" id="third" value='3' #Inputc></ion-input>
+      </ion-item>
+        <ion-button expand="block"  fill="outline" (click) ="Calculate(Inputa.value,Inputb.value,Inputc.value)">Розрахувати</ion-button>
+        <ion-item>
+          <p>Результат обчислення: {{res}}</p>
+        </ion-item>
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

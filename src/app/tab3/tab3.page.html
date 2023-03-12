@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Завдання 3
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав Шкорень Артем. Варіант 16</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання 3</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Згенерувати матрицю
+        розміром NxN. Знайти
+        добуток кожного
+        непарного стовпчику
+        матриці. Виокремити
+        ці стовпчики за
+        допомогою кольору</p>
+      <ion-item>
+        <ion-label position="floating">Розмірність матриці (N)</ion-label>
+        <ion-input type="number" id="first" value='5' #InputN></ion-input>
+      </ion-item>
+        <ion-button expand="block" fill="outline" (click) ="Calculate(InputN.value)">Розрахувати</ion-button>
+        <ion-item>
+          <p>Результат обчислення:</p>
+        </ion-item>
+        <ion-list  *ngFor="let results of res index as x">
+          <ion-item><ion-label>Стовпчик №{{2*(x+1) -1}}:</ion-label>
+            {{results}}</ion-item>
+        </ion-list>
+        <ion-grid>
+          <ion-row *ngFor="let i of mas">
+            <ion-col *ngFor="let j of i index as p" [ngStyle]="{backgroundColor: getColor(p)}">
+              {{j}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
