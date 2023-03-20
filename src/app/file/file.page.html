@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №3</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав Шкорень Артем. Варіант 16</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>Завдання</ion-card-header>
+
+    <ion-card-content>
+      <ion-text>Каталог рослин:<br>
+        - Назва<br>
+        - Умови вирощування<br>
+        - Максимальна висота<br>
+        - Багатолітня чи однолітня<br>
+       Запит. Вивести на екран усі рослини чия висота перебільшує 1 метр,
+       позначити однолітні рослини синім кольором, а багатолітні зеленим</ion-text>
+
+      <ion-button expand="block" [disabled]="disableButton" (click)="load()">Завантажити</ion-button>
+      <ion-item>
+        <ion-list>
+          <ion-item button *ngFor="let item of meter_plants; index as i" detail (click)="toggleDetails(i)">
+            <ion-label *ngIf="!show_details[i]" text-wrap>
+              <p [ngStyle]="{color: getColor(item.perennial_flag)}"><span >Назва: </span>{{item.name}}
+              <span>, Максимальна висота: </span>{{item.max_height_in_cm/100}} м</p>
+            </ion-label>
+            <ion-text *ngIf="show_details[i]">
+              <ion-text [ngStyle]="{color: getColor(item.perennial_flag)}">
+                <span> Період посадки: </span>{{item.grow_conditions.sow}}<span>, Виростає повністю за </span>{{item.grow_conditions.fully_grown_in_months}} міс.
+              </ion-text>
+              <ion-text [ngStyle]="{color: getColor(item.perennial_flag)}" >
+                <span>Період життя:</span> {{getPerennial(item.perennial_flag)}}
+                
+              </ion-text>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
