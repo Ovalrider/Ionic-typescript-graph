@@ -18,6 +18,7 @@ export class FilePage implements OnInit {
   //loading obj
   loading : any
   static readonly max_height: number = 100
+  
   constructor(public loadingController : LoadingController) { }
 
   ngOnInit() {
