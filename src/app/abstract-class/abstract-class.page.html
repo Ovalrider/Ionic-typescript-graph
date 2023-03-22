@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №4</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав Шкорень Артем. Варіант 16</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>Завдання</ion-card-header>
+
+    <ion-card-content>
+      <ion-text>Завдання 1. Скласти програму з абстрактним батьківським класом і двома
+        об`єктами – нащадками.<br>
+        Реалізувати циклічне виведення параметрів о`єктів, використовуючи 
+        поліморфний контейнер -
+         масив об`єктів базового класу (кількість о`єктів>= 5)<br>
+        Завдання 2. Виконати обрахунки відповідно до варіанту.<br>
+      </ion-text>
+      <ion-text color="secondary">Батьківський клас: Призма<br>Класи-нащадки: Трикутна призма(дано S основи, висота), Квадратна призма(дано сторону основи, висоту)
+      <br>Методи: об'єм призми<br></ion-text>
+      <ion-text color="success">Знайти фігуру з мінімальним об`ємом.</ion-text>
+
+      <ion-input type="number" value="5" min="1" #Inputn>Введіть кількість призм в масиві:</ion-input>
+      <ion-button expand="block" (click)="result(Inputn.value)">Розрахунок</ion-button>
+      <p *ngFor="let item of prisms" [ngStyle]="{color : getGreenColor(item.V)}">{{item.show()}}</p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
