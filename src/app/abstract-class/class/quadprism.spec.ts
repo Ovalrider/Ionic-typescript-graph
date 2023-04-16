@@ -3,7 +3,6 @@ import { QuadPrism } from "./quadprism"
 
 describe('QuadPrism testing', () =>{
     let quadPrism : QuadPrism
-    // write spec that for quadPrism
     beforeEach(() =>{
         quadPrism = new QuadPrism("quadPrism", 5, 10)
     })

@@ -3,7 +3,6 @@ import { TriPrism } from  "./triprism";
 
 describe('TriPrism testing', () =>{
     let triPrism : TriPrism
-    // write spec that for TriPrism
     beforeEach(() =>{
         triPrism = new TriPrism("TriPrism", 5, 10)
     })

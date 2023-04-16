@@ -1,4 +1,3 @@
-import { overrides } from "chart.js/dist/core/core.defaults";
 import { Prism } from "./prism";
 
 export class TriPrism extends Prism{
