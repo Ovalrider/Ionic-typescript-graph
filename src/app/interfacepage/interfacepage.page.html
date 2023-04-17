@@ -1,0 +1,16 @@
+<app-header name="Лабораторна робота №6"></app-header>
+<ion-content [fullscreen]="true">
+    <ion-card-header>
+        <ion-title size="large">Завдання</ion-title>
+        <p>Дана наступна ієрархія класів:</p>
+        <p>Ссавець, парнокопитне, птиця, тварина</p>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-button (click)="getInfo()"> Показати</ion-button>
+        <ion-list >
+            <ion-item>{{bird.say() + ". " +  bird.fly()}}</ion-item>
+            <ion-item>{{hoof.say()+ ". " + hoof.run()}}</ion-item>
+            <ion-item>{{wolf.say()+ ". " + wolf.run()+ " " +wolf.feed()}}</ion-item>
+        </ion-list>
+    </ion-card-content>
+</ion-content>
