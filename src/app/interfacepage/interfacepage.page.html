@@ -6,9 +6,9 @@
         <p>Ссавець, парнокопитне, птиця, тварина</p>
     </ion-card-header>
     <ion-card-content>
-        <ion-button (click)="getInfo()"> Показати</ion-button>
-        <ion-list >
-            <ion-item>{{bird.say() + ". " +  bird.fly()}}</ion-item>
+        <ion-button (click)="handleClick()"> Показати</ion-button>
+        <ion-list *ngIf="visible">
+            <ion-item >{{bird.say() + ". " +  bird.fly()}}</ion-item>
             <ion-item>{{hoof.say()+ ". " + hoof.run()}}</ion-item>
             <ion-item>{{wolf.say()+ ". " + wolf.run()+ " " +wolf.feed()}}</ion-item>
         </ion-list>

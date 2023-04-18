@@ -17,7 +17,8 @@ const routes: Routes = [
   {
     path: 'abstract-class',
     loadChildren: () => import('./abstract-class/abstract-class.module').then( m => m.AbstractClassPageModule)
-  },  {
+  },
+  {
     path: 'interfacepage',
     loadChildren: () => import('./interfacepage/interfacepage.module').then( m => m.InterfacepagePageModule)
   }
