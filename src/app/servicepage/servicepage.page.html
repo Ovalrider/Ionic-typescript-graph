@@ -1,0 +1,51 @@
+<app-header name="Лабораторна робота №7"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-title color="success">Завдання</ion-title>
+      <p>1.Провести табулювання функції Ch(x)</p>
+      <p>2.Розробити сервіс для розрахунку значень функції за допомогою ряду
+        відповідно до варіанту</p>
+      <p>3.Розробити сервіс для розрахунку значень функції за допомогою
+        рекурсії відповідно до варіанту</p>
+      <p>4.Розробити сервіс для логування обчислених значень у консоль та
+        використати його у попередніх трьох сервісах</p>
+      <p>5.У основному застосунку підключити сервіси, вивести результати усіх
+        розрахунків та побудувати графіки для усіх обрахунків.</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img src="../assets/graph.png" style="width: 15%;"></ion-img>
+      <ion-item>
+        <ion-label position="floating">Xn</ion-label>
+        <ion-input #Inputxn value="-9.42"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Xk</ion-label>
+        <ion-input #Inputxk value="9.42"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">h</ion-label>
+        <ion-input #Inputh value="1" step="0.01"></ion-input>
+      </ion-item>
+      <ion-button [expand]="true" (click)="calculate(Inputxn.value,Inputxk.value,Inputh.value)">Розрахунок</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-title>
+      Результати:
+    </ion-card-title>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of xyInput | keyvalue">
+          <ion-label>
+            <h5>{{item.key}}</h5>
+
+            <h5>{{item.value}}</h5>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
