@@ -15,14 +15,13 @@
         розрахунків та побудувати графіки для усіх обрахунків.</p>
     </ion-card-header>
     <ion-card-content>
-      <ion-img src="../assets/graph.png" style="width: 15%;"></ion-img>
       <ion-item>
         <ion-label position="floating">Xn</ion-label>
-        <ion-input #Inputxn value="-9.42"></ion-input>
+        <ion-input #Inputxn value="-9.42" min="-9.42" max="9.42"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Xk</ion-label>
-        <ion-input #Inputxk value="9.42"></ion-input>
+        <ion-input #Inputxk value="9.42"min="-9.42" max="9.42"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">h</ion-label>
@@ -37,7 +36,11 @@
       Результати:
     </ion-card-title>
     <ion-card-content>
+      <ion-item>
+        <canvas #lineCanvas></canvas>
+      </ion-item>
       <ion-list>
+        
         <ion-item *ngFor="let item of xyInput | keyvalue">
           <ion-label>
             <h5>{{item.key}}</h5>
